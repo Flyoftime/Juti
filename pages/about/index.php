@@ -17,10 +17,15 @@
  *
  */
 
+use APP\pages\about\AboutHandler;
+
 switch ($op) {
     case 'subscriptions':
-        return new APP\pages\about\AboutHandler();
+    case 'publicationEthics':
+    case 'jurnalPolicies':
+    case 'privacyStatement':
+    case 'privacyStatment':
+        return new AboutHandler();
     default:
-        // Fall back on pkp-lib implementation
-        return require_once('lib/pkp/pages/about/index.php');
+        return new AboutHandler(); // Tangani default juga
 }

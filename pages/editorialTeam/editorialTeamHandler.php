@@ -1,27 +1,27 @@
 <?php
 
 /**
- * @file pages/about/AboutHandler.php
+ * @file pages/editorialTeam/editorialTeamHandler.php
  *
  * Copyright (c) 2014-2021 Simon Fraser University
  * Copyright (c) 2003-2021 John Willinsky
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
- * @class AboutHandler
+ * @class editorialTeamHandler
  *
- * @ingroup pages_about
+ * @ingroup pages_editorialTeam
  *
- * @brief Handle requests for journal about functions.
+ * @brief Handle requests for journal editorialTeam functions.
  */
 
-namespace APP\pages\about;
+namespace APP\pages\editorialTeam;
 
 use APP\core\Application;
 use APP\subscription\SubscriptionTypeDAO;
 use APP\template\TemplateManager;
 use PKP\db\DAORegistry;
 
-class AboutHandler extends \PKP\pages\about\AboutContextHandler
+class editorialTeamHandler extends \PKP\pages\editorialTeam\editorialTeamContextHandler
 {
     /**
      * Display about subscriptions page.
@@ -55,11 +55,11 @@ class AboutHandler extends \PKP\pages\about\AboutContextHandler
         ]);
         $templateMgr->display('frontend/pages/subscriptions.tpl');
     }
-    public function publicationEthics($args, $request)
+    public function reviewers($args, $request)
     {
         $this->setupTemplate($request);
         $templateMgr = \APP\template\TemplateManager::getManager($request);
-        $templateMgr->display('frontend/pages/publicationEthics.tpl');
+        $templateMgr->display('frontend/pages/reviewers.tpl');
     }
     public function journalPolicies($args, $request)
     {
